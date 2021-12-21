@@ -327,20 +327,24 @@ def pc_pos_chess():
     try:
         pc_pressed = easy_pc.find_maxscore(chess_array, whiteround[-1])
         chess_array.append(pc_pressed)  # 记录电脑下棋位置
-        piece_i, piece_j = getrealpos(chess_array[chess_num])  # 已处理的位置
-        isempty = if_isempty(piece_i, piece_j)
-        print(isempty)
-        if isempty == True:  # 如果这个地方没有棋子
-            whiteround.append(-whiteround[chess_num])
-            piece_x.append(piece_i)
-            piece_y.append(piece_j)
-            piece.append([piece_i, piece_j])
-            chess_num += 1
-            gloval.setval("chess_array", chess_array)
-        else:  # 	如果这个地方有棋子
-            del chess_array[chess_num]  # 删除那个重复的数组
-    except UnboundLocalError as e:
-        pass  # 没有很好的解决方式
+    except UnboundLocalError as _:
+        chess_array.append([3, 3])  # 随便猜一个位置
+
+    piece_i, piece_j = getrealpos(chess_array[chess_num])  # 已处理的位置
+    isempty = if_isempty(piece_i, piece_j)
+    print(isempty)
+    if isempty == True:  # 如果这个地方没有棋子
+        whiteround.append(-whiteround[chess_num])
+        piece_x.append(piece_i)
+        piece_y.append(piece_j)
+        piece.append([piece_i, piece_j])
+        chess_num += 1
+        gloval.setval("chess_array", chess_array)
+    else:  # 	如果这个地方有棋子
+        del chess_array[chess_num]  # 删除那个重复的数组
+    #  except UnboundLocalError as _:
+        #  chess_array.append([0, 0])  # 随便猜一个位置
+        #  pass  # 没有很好的解决方式
 
 
 def main():

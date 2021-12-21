@@ -103,8 +103,8 @@ def find_maxscore(array, whiteround):
         best_pos = [5, 5]  # Set a beginning best position for the first stroke.
     else:
         chess_score_array = []
-        for row in range(1, GOMOKU_SIZE):
-            for col in range(1, GOMOKU_SIZE):
+        for row in range(1, GOMOKU_SIZE+1):
+            for col in range(1, GOMOKU_SIZE+1):
                 chess_pos = [row, col]
                 if chess_pos not in array:
                     pos_score = chess_score(array, chess_pos, whiteround)
@@ -126,11 +126,7 @@ def find_maxscore(array, whiteround):
             best_pos = [pc_pressed_x, pc_pressed_y]
             # print(best_pos)
             print(chess_score_array)
-        except IndexError as e:
+        except IndexError as _:
             pass  # 不进行任何处理
-        #  except UnboundLocalError as e:
-            #  pass
-        #  except Exception as e:
-            #  pass
     return best_pos
 
