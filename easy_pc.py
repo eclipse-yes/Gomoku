@@ -100,8 +100,7 @@ def chess_tuple_score(black_num, white_num, whiteround):
 # 寻找棋盘上分数最高的空格,返回bestpos最佳位置
 def find_maxscore(array, whiteround):
     if array == []:
-        # best_pos = [8, 8]
-        best_pos = [5, 5]
+        best_pos = [5, 5]  # Set a beginning best position for the first stroke.
     else:
         chess_score_array = []
         for row in range(1, GOMOKU_SIZE):
