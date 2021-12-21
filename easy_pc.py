@@ -128,5 +128,9 @@ def find_maxscore(array, whiteround):
             print(chess_score_array)
         except IndexError as e:
             pass  # 不进行任何处理
+        except UnboundLocalError as e:
+            pass
+        except Exception as e:
+            pass
     return best_pos
 
