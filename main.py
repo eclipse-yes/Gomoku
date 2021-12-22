@@ -33,7 +33,8 @@ def drawbg():
     screen.blit(imChessboard, (chessboard_start_x, chessboard_start_y))
 
     screen.blit(gloval.getval("imLogo"), (570, 20))
-    screen.blit(gloval.getval("imLabel"), (230, 20))
+    # screen.blit(gloval.getval("imLabel"), (230, 20))
+    screen.blit(gloval.getval("imLabel"), (205, 20))
 
 
 def drawmenu():
