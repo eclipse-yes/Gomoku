@@ -34,6 +34,7 @@ def drawbg():
 
     screen.blit(gloval.getval("imLogo"), (570, 20))
     # screen.blit(gloval.getval("imLabel"), (230, 20))
+    # Change a new top label
     screen.blit(gloval.getval("imLabel"), (205, 20))
 
 
